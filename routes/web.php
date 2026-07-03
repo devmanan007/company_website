@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about-us', [PageController::class, 'about'])->name('about');
+Route::get('/careers', [PageController::class, 'careers'])->name('careers');
+Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
+Route::get('/blogs/{slug}', [PageController::class, 'blogDetail'])->name('blogs.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
