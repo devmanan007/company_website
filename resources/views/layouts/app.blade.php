@@ -32,10 +32,10 @@
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Careers</a>
+                        <a class="nav-link {{ request()->routeIs('careers') ? 'active' : '' }}" href="{{ route('careers') }}">Careers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blogs</a>
+                        <a class="nav-link {{ request()->routeIs('blogs*') ? 'active' : '' }}" href="{{ route('blogs') }}">Blogs</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-3">
@@ -95,8 +95,8 @@
                         <li class="mb-2"><a href="{{ url('/') }}" class="text-secondary text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="{{ route('about') }}" class="text-secondary text-decoration-none">About Us</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Contact Us</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Careers</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Blogs</a></li>
+                        <li class="mb-2"><a href="{{ route('careers') }}" class="text-secondary text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="{{ route('blogs') }}" class="text-secondary text-decoration-none">Blogs</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4">
