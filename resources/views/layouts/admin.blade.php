@@ -26,19 +26,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white {{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.posts.index') }}" class="nav-link text-white {{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
                         <i class="bi bi-file-text me-2"></i>
                         Blogs
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white {{ request()->routeIs('admin.careers.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.careers.index') }}" class="nav-link text-white {{ request()->routeIs('admin.careers.*') ? 'active' : '' }}">
                         <i class="bi bi-briefcase me-2"></i>
                         Careers
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white {{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.messages.index') }}" class="nav-link text-white {{ request()->routeIs('admin.messages.*') ? 'active' : '' }}">
                         <i class="bi bi-envelope me-2"></i>
                         Messages
                     </a>
@@ -77,6 +77,20 @@
 
             {{-- Content --}}
             <main class="flex-grow-1 p-4 bg-light">
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="bi bi-check-circle me-1"></i>{{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-triangle me-1"></i>Please correct the errors below.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                @endif
+
                 @yield('content')
             </main>
         </div>
