@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +23,9 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::resource('posts', BlogController::class);
+    Route::resource('careers', CareerController::class);
+    Route::resource('messages', MessageController::class)->only(['index', 'show', 'destroy']);
 });
 
 require __DIR__.'/auth.php';
