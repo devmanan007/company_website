@@ -26,7 +26,7 @@
                         <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
@@ -93,7 +93,7 @@
                     <h6 class="fw-semibold mb-3">Quick Links</h6>
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="{{ url('/') }}" class="text-secondary text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="{{ route('about') }}" class="text-secondary text-decoration-none">About Us</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Contact Us</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Careers</a></li>
                         <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Blogs</a></li>
