@@ -13,6 +13,8 @@ Route::get('/about-us', [PageController::class, 'about'])->name('about');
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
 Route::get('/blogs/{slug}', [PageController::class, 'blogDetail'])->name('blogs.show');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact-us', [PageController::class, 'submitContactForm']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
