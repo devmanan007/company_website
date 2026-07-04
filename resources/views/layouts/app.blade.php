@@ -29,7 +29,7 @@
                         <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('careers') ? 'active' : '' }}" href="{{ route('careers') }}">Careers</a>
@@ -94,7 +94,7 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="{{ url('/') }}" class="text-secondary text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="{{ route('about') }}" class="text-secondary text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="{{ route('contact') }}" class="text-secondary text-decoration-none">Contact Us</a></li>
                         <li class="mb-2"><a href="{{ route('careers') }}" class="text-secondary text-decoration-none">Careers</a></li>
                         <li class="mb-2"><a href="{{ route('blogs') }}" class="text-secondary text-decoration-none">Blogs</a></li>
                     </ul>

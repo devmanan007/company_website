@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Message;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -47,5 +49,25 @@ class PageController extends Controller
             ->firstOrFail();
 
         return view('blogs.show', compact('post'));
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function submitContactForm(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'subject' => ['required', 'string', 'max:255'],
+            'message' => ['required', 'string'],
+        ]);
+
+        Message::create($validated);
+
+        return redirect()->route('contact')
+            ->with('success', 'Thank you! Your message has been received. We will get back to you shortly.');
     }
 }
